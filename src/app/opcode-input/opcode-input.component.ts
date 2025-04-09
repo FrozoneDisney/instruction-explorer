@@ -10,10 +10,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class OpcodeInputComponent {
   inputHex: string = '';
-  @Output() decoded = new EventEmitter<string>();
+  @Output() disassembled = new EventEmitter<string>();
 
-  decode()
+  disassemble()
   {
-    this.decoded.emit(this.inputHex);
+    this.disassembled.emit(this.inputHex);
   }
 }

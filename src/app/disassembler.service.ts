@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class DecoderService {
+export class DisassemblerService {
   private w1regs = ['AX', 'CX', 'DX', 'BX', 'SP', 'BP', 'SI', 'DI'];
   private w0regs = ['AL', 'CL', 'DL', 'BL', 'AH', 'CH', 'DH', 'BH'];
   
-  decode(byteString: string): string {
+  disassemble(byteString: string): string {
     const bytes = byteString.trim().split(" ").map((b) => parseInt(b, 16));
     const opcode = bytes[0];
     let output = 'null';

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { OpcodeInputComponent } from './opcode-input/opcode-input.component';
 import { DecodedOutputComponent } from './decoded-output/decoded-output.component';
-import { DecoderService } from './decoder.service';
+import { DisassemblerService } from './disassembler.service';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +14,12 @@ import { DecoderService } from './decoder.service';
 export class AppComponent {
   title = 'instruction-explorer';
 
-  decodedInstruction: string | null = null;
+  disassembledInstruction: string | null = null;
 
-  constructor(private decoder: DecoderService){}
+  constructor(private disassembler: DisassemblerService){}
 
-  onDecode(hex: string)
+  onDisassemble(hex: string)
   {
-    this.decodedInstruction = this.decoder.decode(hex);
+    this.disassembledInstruction = this.disassembler.disassemble(hex);
   }
 }
