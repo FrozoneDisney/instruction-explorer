@@ -12,7 +12,7 @@ export class OpcodeInputComponent {
   inputHex: string = '';
   @Output() disassembled = new EventEmitter<string>();
 
-  disassemble()
+  disassemble(): void
   {
     this.disassembled.emit(this.inputHex);
   }

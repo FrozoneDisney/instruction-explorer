@@ -18,7 +18,7 @@ export class AppComponent {
 
   constructor(private disassembler: DisassemblerService){}
 
-  onDisassemble(hex: string)
+  onDisassemble(hex: string): void
   {
     this.disassembledInstruction = this.disassembler.disassemble(hex);
   }
